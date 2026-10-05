@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="Mississauga Chess Club knight">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8A3D"/><stop offset="1" stop-color="#E8433F"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <g opacity=".18" fill="#2B1B38">
+    <rect x="32" y="0" width="16" height="16"/><rect x="48" y="16" width="16" height="16"/>
+    <rect x="0" y="32" width="16" height="16"/><rect x="16" y="48" width="16" height="16"/>
+  </g>
+  <path d="M17 52v-3.5c0-6 4.6-9.3 8.2-13.2-3.4.9-6.4 2.9-9.2 5.7l-4.6-4.2C13.3 29.5 18.8 20 27 15.2l2.6-6.2 4.7 4.2c8.700 1.700 14.700 9.200 14.700 19V52z" fill="#FFF4E0"/>
+  <path d="M17 52v-3.5c0-6 4.6-9.3 8.2-13.2" fill="none"/>
+  <circle cx="30.500" cy="22.500" r="2.200" fill="#2B1B38"/>
+  <path d="M38 17c5.500 3.600 8 9 8 15.500" fill="none" stroke="#FFB33A" stroke-width="3.200" stroke-linecap="round"/>
+  <path d="M41.500 14c4.500 3 7.200 7 7.800 11" fill="none" stroke="#FFD166" stroke-width="2.400" stroke-linecap="round"/>
+  <rect x="13" y="52" width="38" height="6" rx="3" fill="#2B1B38"/>
+</svg>

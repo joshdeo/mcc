@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Club schedule | Mississauga Chess Club</title>
+<meta name="description" content="The 2026 Mississauga Chess Club schedule for adult and youth sessions.">
+<meta name="theme-color" content="#FFB627">
+<link rel="icon" href="assets/logo_mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.className+=' js'</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Mississauga Chess Club home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo_modern_dark.svg"><img src="assets/logo_modern.svg" width="182" height="43" alt="Mississauga Chess Club"></picture></a>
+<button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="membership.html">Membership</a>
+<div class="dd cur"><button aria-expanded="false">Play</button><div class="panel"><a href="schedule.html" aria-current="page">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a></div></div>
+<div class="dd"><button aria-expanded="false">About</button><div class="panel"><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div></div>
+<a class="btn small" href="waitlist.html">Join the waitlist</a>
+</nav></div></header>
+<main id="main">
+<div class="wrap pagehead"><div class="crumb"><a href="index.html">Home</a> / Play / Club schedule</div><h1>Club schedule 2026</h1><p>Pick a night to see its tournaments, time controls and closures.</p></div>
+<div class="wrap"><div class="banner"><picture><source type="image/webp" srcset="assets/original_800.webp 800w, assets/original_1600.webp 1600w" sizes="(max-width:860px) 92vw, 520px"><img src="assets/original_800.jpg" srcset="assets/original_800.jpg 800w, assets/original_1600.jpg 1600w" sizes="(max-width:860px) 92vw, 520px" width="800" height="600" alt="Tables set with chess boards and clocks, ready for a club night" loading="lazy" decoding="async"></picture></div></div>
+<div class="wrap"><section style="padding-top:10px">
+<div class="tabs" role="tablist" id="tabs">
+<button role="tab" aria-selected="false" data-k="wed">Adults, Wednesday</button><button role="tab" aria-selected="false" data-k="mon">Youth, Monday</button><button role="tab" aria-selected="false" data-k="tue">Youth, Tuesday</button><button role="tab" aria-selected="false" data-k="thu">Youth, Thursday</button><button role="tab" aria-selected="false" data-k="fri">Youth, Friday</button>
+</div>
+<div id="panel"></div>
+<p class="muted small" style="margin-top:18px">Dates are shown by month. For exact round dates and pairings, open the event from the <a href="events.html">events page</a>.</p>
+</section></div>
+<script>
+(function(){
+var S={"wed":{"label":"Adults, Wednesday","place":"Erindale United Church","hours":"6:30 to 10:30 pm","rows":[["New Year Classic","Jan to Feb","7","60 min + 30 sec delay"],["Spring Glory","Mar to Apr","7","45 min + 30 sec increment"],["April Active","Apr to May","9","10 min + 2 sec increment"],["Merry May","May to Jun","7","60 min + 30 sec delay"],["July Blitz","July, one event","9","3 min + 2 sec increment"],["Tropical Summer","Jul to Sep","6","60 min + 30 sec delay"],["Mississauga Chess Club Championship","Sep to Oct","7","60 min + 30 sec delay"],["November Blitz","Nov","9","3 min + 2 sec increment"],["Goodbye 2026 Active","Nov","9","10 min + 2 sec increment"]],"notes":["No club Feb 18 and Sep 2 (inclement weather).","No club Jul 1 (Canada Day).","Summer break Jul 8 to 15.","Annual general meeting Dec 2.","Christmas party and simuls Dec 9.","Winter break Dec 16 to Jan 6."]},"mon":{"label":"Youth, Monday","place":"Erindale United Church","hours":"6:30 to 8:30 pm","rows":[["MCC Monday Junior Tournaments #22 to #27","Through the year","5 to 6 each","25 min + 5 sec"],["MCC Monday Junior Championship","Sep 14 to Oct 26","5 to 6","25 min + 5 sec"]],"notes":["Closed for Family Day, Easter Monday, Victoria Day, Civic Holiday, Labour Day and Thanksgiving.","Summer break and winter break apply."]},"tue":{"label":"Youth, Tuesday","place":"The Erindale Academy","hours":"See the club for times","rows":[["MCC Tuesday Junior Opening Cup","October","4","25 min"],["MCC Tuesday Junior Tournament #1","Nov to Dec","5","25 min"]],"notes":["Christmas party and simuls Dec 8.","Winter break closures apply."]},"thu":{"label":"Youth, Thursday","place":"The Erindale Academy","hours":"See the club for times","rows":[["MCC Thursday Junior Opening Cup","October","4","25 min"],["MCC Thursday Junior Tournament #1","Nov to Dec","5","25 min"]],"notes":["Christmas party and simuls Dec 10.","Winter break closures apply."]},"fri":{"label":"Youth, Friday","place":"Erindale United Church","hours":"6:30 to 8:30 pm","rows":[["MCC Friday Junior Tournaments #14 to #19","Through the year","4 to 6 each","25 min + 5 sec"],["MCC Friday Junior Championship","Sep 11 to Oct 23","6","25 min + 5 sec"]],"notes":["Closed for Family Day, staff training, a church event, the Mississauga Open, Civic Holiday and summer break.","Winter break applies."]}};
+var order=['wed','mon','tue','thu','fri'];
+var dayMap={1:'mon',2:'tue',3:'wed',4:'thu',5:'fri'};
+var cur=dayMap[new Date().getDay()]||'wed';
+var tabs=[].slice.call(document.querySelectorAll('#tabs button'));
+function show(k){
+ tabs.forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-k')===k?'true':'false');});
+ var s=S[k],h='<div class="card" style="margin-bottom:16px"><div class="grid"><div><b>Where</b><br>'+s.place+'</div><div><b>Hours</b><br>'+s.hours+'</div></div></div>';
+ h+='<div class="tablewrap"><table><thead><tr><th>Tournament</th><th>When</th><th>Rounds</th><th>Time control</th></tr></thead><tbody>';
+ s.rows.forEach(function(r){h+='<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td class="num">'+r[2]+'</td><td>'+r[3]+'</td></tr>';});
+ h+='</tbody></table></div><h3 style="margin-top:20px">Dates to know</h3><ul>';
+ s.notes.forEach(function(x){h+='<li>'+x+'</li>';});
+ h+='</ul>';
+ document.getElementById('panel').innerHTML=h;
+ try{history.replaceState(null,'','#'+k);}catch(e){}
+}
+tabs.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-k'));});});
+var hash=location.hash.replace('#','');
+show(S[hash]?hash:cur);
+})();
+</script>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flogo"><img src="assets/logo_modern_dark.svg" width="194" height="46" alt="Mississauga Chess Club" loading="lazy"></div>
+<div class="fcols">
+<div><h4>Play</h4><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a><a href="membership.html">Membership</a><a href="waitlist.html">Waitlist</a></div>
+<div><h4>About</h4><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div>
+<div><h4>Find us</h4>
+<a href="https://maps.google.com/?q=1444+Dundas+Crescent+Mississauga+ON">Erindale United Church<br>1444 Dundas Crescent</a>
+<a href="https://maps.google.com/?q=1576+Dundas+Street+West+Mississauga+ON">The Erindale Academy<br>1576 Dundas Street West</a>
+<a href="mailto:mississaugachessclub@gmail.com">mississaugachessclub@gmail.com</a>
+<a href="https://www.instagram.com/mississaugachessclub/">Instagram</a>
+<a href="https://www.facebook.com/groups/375896684513470">Facebook group</a></div>
+</div>
+<p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
+</div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

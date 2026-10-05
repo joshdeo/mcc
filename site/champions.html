@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Champions | Mississauga Chess Club</title>
+<meta name="description" content="Mississauga Chess Club champions from 1972 to 2025.">
+<meta name="theme-color" content="#FFB627">
+<link rel="icon" href="assets/logo_mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.className+=' js'</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Mississauga Chess Club home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo_modern_dark.svg"><img src="assets/logo_modern.svg" width="182" height="43" alt="Mississauga Chess Club"></picture></a>
+<button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="membership.html">Membership</a>
+<div class="dd cur"><button aria-expanded="false">Play</button><div class="panel"><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html" aria-current="page">Champions</a></div></div>
+<div class="dd"><button aria-expanded="false">About</button><div class="panel"><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div></div>
+<a class="btn small" href="waitlist.html">Join the waitlist</a>
+</nav></div></header>
+<main id="main">
+<div class="wrap pagehead"><div class="crumb"><a href="index.html">Home</a> / Play / Champions</div><h1>Club champions</h1><p>Every Mississauga Chess Club champion on record, from 1972 to today.</p></div>
+<div class="wrap"><section style="padding-top:10px">
+<div class="grid two"><div><div class="field"><label for="q">Search by year or name</label><input id="q" type="search" placeholder="Try 2024 or Chung"></div>
+<div class="tablewrap"><table><thead><tr><th style="width:90px">Year</th><th>Champion</th></tr></thead><tbody id="rows"></tbody></table></div></div>
+<div><div class="card"><h3>Most titles</h3><div id="board"></div><p class="muted small">Counted from the list shown here. Years without an entry are not recorded on the current site. 2018 was split into Premier and Amateur sections.</p></div></div></div>
+</section></div>
+<script>
+(function(){
+var C=[[2025,"Adam Cheng"],[2024,"Nikola Brajkovic"],[2023,"Nikola Brajkovic"],[2022,"Muthukumaran Ramakrishnan"],[2019,"Anirud Chakkoli"],[2018,"Premier: Richard Chen, Fady Abdelmalek. Amateur: Nikola Petrov, Kevin Sun"],[2017,"Benito Surya"],[2016,"B Surya"],[2015,"T Bark"],[2014,"T Bark"],[2013,"T Sabbagh"],[2012,"E Cassareno"],[2011,"C Ferrer"],[2010,"F Supsup, P Gelis"],[2009,"H Arandia"],[2008,"K Chung"],[2007,"K Chung"],[2006,"K Chung"],[2005,"T Bark"],[2004,"K Chung"],[2003,"V Chow"],[2002,"C Ferrer"],[2001,"C Ferrer"],[2000,"A Warzywoda"],[1999,"D Begoray"],[1998,"P Arens"],[1997,"A Warzywoda"],[1996,"P Beckwith"],[1995,"P Olszewski"],[1994,"P Olszewski"],[1993,"P Beckwith, B Floyd"],[1992,"P Olszewski"],[1991,"B Floyd"],[1990,"A Warzywoda"],[1989,"V Chow"],[1988,"V Chow"],[1987,"D Begoray"],[1986,"J Upper"],[1985,"G Murray"],[1984,"B McDermott"],[1983,"R Walters"],[1982,"A Lidacis"],[1981,"A Lidacis"],[1980,"J Beaulieu"],[1979,"R Walters"],[1978,"W Besky"],[1977,"SN McVicar"],[1976,"C Sellars"],[1974,"R Morrison"],[1973,"S Cooper"],[1972,"K Schaefer"]];
+var q=document.getElementById('q'),rows=document.getElementById('rows');
+function draw(){
+ var s=q.value.trim().toLowerCase(),h='';
+ C.forEach(function(r){
+  if(s&&String(r[0]).indexOf(s)<0&&r[1].toLowerCase().indexOf(s)<0)return;
+  h+='<tr><td class="num"><b>'+r[0]+'</b></td><td>'+r[1]+'</td></tr>';
+ });
+ rows.innerHTML=h||'<tr><td colspan="2">No champions match that search.</td></tr>';
+}
+q.addEventListener('input',draw);draw();
+var cnt={};
+C.forEach(function(r){if(r[0]===2018)return;r[1].split(', ').forEach(function(n){cnt[n]=(cnt[n]||0)+1;});});
+var top=Object.keys(cnt).filter(function(n){return cnt[n]>1;}).sort(function(a,b){return cnt[b]-cnt[a]||(a<b?-1:1);});
+document.getElementById('board').innerHTML=top.map(function(n){return '<div class="row"><span>'+n+'</span><b>'+cnt[n]+'</b></div>';}).join('');
+})();
+</script>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flogo"><img src="assets/logo_modern_dark.svg" width="194" height="46" alt="Mississauga Chess Club" loading="lazy"></div>
+<div class="fcols">
+<div><h4>Play</h4><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a><a href="membership.html">Membership</a><a href="waitlist.html">Waitlist</a></div>
+<div><h4>About</h4><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div>
+<div><h4>Find us</h4>
+<a href="https://maps.google.com/?q=1444+Dundas+Crescent+Mississauga+ON">Erindale United Church<br>1444 Dundas Crescent</a>
+<a href="https://maps.google.com/?q=1576+Dundas+Street+West+Mississauga+ON">The Erindale Academy<br>1576 Dundas Street West</a>
+<a href="mailto:mississaugachessclub@gmail.com">mississaugachessclub@gmail.com</a>
+<a href="https://www.instagram.com/mississaugachessclub/">Instagram</a>
+<a href="https://www.facebook.com/groups/375896684513470">Facebook group</a></div>
+</div>
+<p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
+</div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

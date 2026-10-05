@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lessons | Mississauga Chess Club</title>
+<meta name="description" content="Free weekly chess lessons from the Mississauga Chess Club, each linked to a Lichess study.">
+<meta name="theme-color" content="#FFB627">
+<link rel="icon" href="assets/logo_mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.className+=' js'</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Mississauga Chess Club home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo_modern_dark.svg"><img src="assets/logo_modern.svg" width="182" height="43" alt="Mississauga Chess Club"></picture></a>
+<button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="membership.html">Membership</a>
+<div class="dd cur"><button aria-expanded="false">Play</button><div class="panel"><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html" aria-current="page">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a></div></div>
+<div class="dd"><button aria-expanded="false">About</button><div class="panel"><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div></div>
+<a class="btn small" href="waitlist.html">Join the waitlist</a>
+</nav></div></header>
+<main id="main">
+<div class="wrap pagehead"><div class="crumb"><a href="index.html">Home</a> / Play / Lessons</div><h1>Lessons and topics</h1><p>Every lesson opens a free Lichess study. Live lessons run on Monday and Friday sessions only, from 6:45 to 7:15 pm and 8:00 to 8:30 pm.</p></div>
+<div class="wrap"><section style="padding-top:10px">
+<div class="grid two" style="align-items:end;margin-bottom:8px">
+<div class="field" style="margin:0"><label for="q">Find a lesson</label><input id="q" type="search" placeholder="Try endgame, Sicilian or knight"></div>
+<div class="cta"><button class="btn sun" id="rand" type="button">Surprise me</button><span class="pill" id="count" style="align-self:center"></span></div>
+</div>
+<div id="groups" style="margin-top:18px"></div>
+<div class="notice" style="margin-top:22px"><b>About these studies</b>Studies are free and open on Lichess.org, and each one opens in a new tab. Only a few are annotated so far, and the club plans to add more comments over time. Dashed topics do not have a published link yet.</div>
+</section></div>
+<script>
+(function(){
+var L={"The basics":[["Checks","JklYUdCz"],["Captures","XBVd9ETg"],["Attacks","VeMBDMfD"],["Checkmate","DAgjAH8u"],["Stalemate","0TS37hS2"],["Notation and etiquette","ZZv5Yg6D"],["En passant","SMJfjPwx"],["Resignation","ZnB0ouY1"],["Ranks, files and open diagonals","Jh8dV028"]],"Big ideas":[["Development","3EAs69WG"],["The center","RezVrDSs"],["Defence","PdiDiZC8"],["Material","px6eu8Di"],["Activity","5OLfFBOS"],["Initiative","MOq1Bliv"],["Space","XeUK6MI1"],["Compensation","pGgdzs10"],["Simplification","ROkdaktn"],["Consolidation","vrjLGLkt"],["Counterplay","2LT9I69I"],["Principle of 2 weaknesses","NwtM6Fr6"]],"Meet the pieces":[["The pawn","3Q5SwgMT"],["The knight","wRXJsoJW"],["The bishop","zsQ26vJa"],["The rook","XhuqqXsJ"],["The queen","2E4Zl9PG"],["The king","XkpVk2Zc"],["Loose pawns","zcn0OAw5"]],"Tactics and tricks":[["Sacrificing","tKhfXXYB"],["Desperado","BNOUsC1s"],["Discovered attacks","b3ysWaRs"],["Zwischenzug","pzGF9bFz"],["Swindling","YJzWnNDq"],["Blockade and outpost","r7n0zoGV"]],"Think like a player":[["Prophylaxis","6YztR47B"],["Candidate moves","vi5RUmev"],["Analysis","kEkZtTlY"],["Domination","HqfjOFah"],["Zugzwang","CaDheARM"],["Tempo and triangulation","oh7WhgdX"],["Opposition","Zy6nTY2M"],["Sharp and solid","POhQxJ7d"]],"Openings and style":[["Sicilian Defence","pkPAQUcg"],["French","97WRmgRE"],["Caro","F7Paz1KX"],["Petrov","hGWy2RTH"],["Fianchetto","05mOR1fS"],["Hypermodernism","VjzMk6VG"],["Oldies but goodies","D2migRcg"],["Modern miniatures","02PD2moL"],["Reversed systems",null],["Accelerated systems",null],["Neo systems",null]],"Heroes and role models":[["Canadian talent",null],["Chess role models",null]],"Wednesday sessions":[["OTB blitz practice","8F4NehiK"],["Building your repertoire","XXQ3VWmm"],["Endgame gauntlet","PyxGYJIN"],["Novel maneuvers","4EnHfCdb"]]};var BASE='https://lichess.org/study/';
+var q=document.getElementById('q'),box=document.getElementById('groups'),cnt=document.getElementById('count');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function draw(){
+ var s=q.value.trim().toLowerCase(),h='',n=0;
+ Object.keys(L).forEach(function(g){
+  var items=L[g].filter(function(x){return !s||x[0].toLowerCase().indexOf(s)>-1||g.toLowerCase().indexOf(s)>-1;});
+  if(!items.length)return;
+  h+='<div class="card" style="margin-bottom:18px"><h3>'+g+'</h3><div class="lchips">'+items.map(function(x){
+    if(x[1]){n++;return '<a class="lesson" href="'+BASE+x[1]+'" target="_blank" rel="noopener">'+esc(x[0])+'</a>';}
+    return '<span class="lesson" title="Link not published yet">'+esc(x[0])+'</span>';
+  }).join('')+'</div></div>';
+ });
+ box.innerHTML=h||'<p class="muted">No lessons match that search.</p>';
+ cnt.textContent=n+' studies shown';
+}
+q.addEventListener('input',draw);draw();
+document.getElementById('rand').addEventListener('click',function(){
+ var links=[];Object.keys(L).forEach(function(g){L[g].forEach(function(x){if(x[1])links.push(x);});});
+ var pick=links[Math.floor(Math.random()*links.length)];
+ window.open(BASE+pick[1],'_blank','noopener');
+});
+})();
+</script>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flogo"><img src="assets/logo_modern_dark.svg" width="194" height="46" alt="Mississauga Chess Club" loading="lazy"></div>
+<div class="fcols">
+<div><h4>Play</h4><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a><a href="membership.html">Membership</a><a href="waitlist.html">Waitlist</a></div>
+<div><h4>About</h4><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div>
+<div><h4>Find us</h4>
+<a href="https://maps.google.com/?q=1444+Dundas+Crescent+Mississauga+ON">Erindale United Church<br>1444 Dundas Crescent</a>
+<a href="https://maps.google.com/?q=1576+Dundas+Street+West+Mississauga+ON">The Erindale Academy<br>1576 Dundas Street West</a>
+<a href="mailto:mississaugachessclub@gmail.com">mississaugachessclub@gmail.com</a>
+<a href="https://www.instagram.com/mississaugachessclub/">Instagram</a>
+<a href="https://www.facebook.com/groups/375896684513470">Facebook group</a></div>
+</div>
+<p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
+</div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

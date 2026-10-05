@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Membership | Mississauga Chess Club</title>
+<meta name="description" content="Mississauga Chess Club membership rates, CFC fees and a cost calculator.">
+<meta name="theme-color" content="#FFB627">
+<link rel="icon" href="assets/logo_mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.className+=' js'</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Mississauga Chess Club home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo_modern_dark.svg"><img src="assets/logo_modern.svg" width="182" height="43" alt="Mississauga Chess Club"></picture></a>
+<button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="membership.html" aria-current="page">Membership</a>
+<div class="dd"><button aria-expanded="false">Play</button><div class="panel"><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a></div></div>
+<div class="dd"><button aria-expanded="false">About</button><div class="panel"><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div></div>
+<a class="btn small" href="waitlist.html">Join the waitlist</a>
+</nav></div></header>
+<main id="main">
+<div class="wrap pagehead"><div class="crumb"><a href="index.html">Home</a> / Membership</div><h1>Membership</h1><p>The first visit is free. Membership is paid annually from the week you join.</p></div>
+<div class="wrap"><div class="banner"><picture><source type="image/webp" srcset="assets/warm_800.webp 800w, assets/warm_1600.webp 1600w" sizes="(max-width:860px) 92vw, 520px"><img src="assets/warm_800.jpg" srcset="assets/warm_800.jpg 800w, assets/warm_1600.jpg 1600w" sizes="(max-width:860px) 92vw, 520px" width="800" height="600" alt="Tables set with chess boards and clocks, ready for a club night" loading="lazy" decoding="async"></picture></div></div>
+<div class="wrap">
+<section style="padding-top:10px"><div class="grid two">
+<div class="card"><h3>MCC annual rates</h3><div class="row"><span>Standard</span><b>$120</b></div><div class="row"><span>Extra family members</span><b>$60 each</b></div><div class="row"><span>Senior (age 60 and over)</span><b>$60</b></div><div class="row"><span>Masters and Experts (CFC 2000 and over)</span><b>Free</b></div></div>
+<div class="card"><h3>CFC annual rates</h3><div class="row"><span>Junior</span><b>$32</b></div><div class="row"><span>Adult</span><b>$48</b></div><p class="muted small">Wednesday tournament players need a CFC membership. Juniors on Monday and Friday pay no CFC fee but still need a CFC ID.</p></div>
+</div></section>
+
+<section><h2>Cost calculator</h2><div class="card"><div class="grid two">
+<div>
+<div class="field"><label for="ctype">Main member</label><select id="ctype"><option value="120">Standard</option><option value="60">Senior (60 and over)</option><option value="0">Master or Expert (CFC 2000 and over)</option></select></div>
+<div class="field"><label for="cfam">Extra family members</label><input id="cfam" type="number" min="0" max="10" value="0"></div>
+<div class="field"><label for="cad">Adults playing Wednesday tournaments</label><input id="cad" type="number" min="0" max="10" value="0"></div>
+<div class="field"><label for="cju">Juniors playing Wednesday tournaments</label><input id="cju" type="number" min="0" max="10" value="0"></div>
+</div>
+<div aria-live="polite"><div class="row"><span>MCC main member</span><b id="r1">$120</b></div><div class="row"><span>Extra family members</span><b id="r2">$0</b></div><div class="row"><span>CFC memberships</span><b id="r3">$0</b></div>
+<p class="muted" style="margin:16px 0 4px">Estimated total per year</p><div class="total" id="rt">$120</div>
+<p class="muted small">An estimate only. Confirm amounts with the club before paying.</p></div></div></div></section>
+
+<section><h2>How to pay</h2><div class="grid two">
+<div class="card"><h3>Accepted</h3><p class="muted" style="margin:0">Cheques and electronic transfers only.</p></div>
+<div class="card"><h3>Refunds</h3><p class="muted" style="margin:0">No refunds. Try your free first visit before you commit.</p></div></div>
+<div class="cta" style="margin-top:20px"><a class="btn" href="waitlist.html">Join the waitlist</a><a class="btn ghost" href="contact.html">Ask a question</a></div></section>
+</div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i);};
+function n(i){return Math.max(0,parseInt($(i).value,10)||0);}
+function calc(){
+ var a=+$('ctype').value,b=n('cfam')*60,c=n('cad')*48+n('cju')*32;
+ $('r1').textContent='$'+a;$('r2').textContent='$'+b;$('r3').textContent='$'+c;$('rt').textContent='$'+(a+b+c);
+}
+['ctype','cfam','cad','cju'].forEach(function(i){$(i).addEventListener('input',calc);});
+calc();
+})();
+</script>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flogo"><img src="assets/logo_modern_dark.svg" width="194" height="46" alt="Mississauga Chess Club" loading="lazy"></div>
+<div class="fcols">
+<div><h4>Play</h4><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a><a href="membership.html">Membership</a><a href="waitlist.html">Waitlist</a></div>
+<div><h4>About</h4><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div>
+<div><h4>Find us</h4>
+<a href="https://maps.google.com/?q=1444+Dundas+Crescent+Mississauga+ON">Erindale United Church<br>1444 Dundas Crescent</a>
+<a href="https://maps.google.com/?q=1576+Dundas+Street+West+Mississauga+ON">The Erindale Academy<br>1576 Dundas Street West</a>
+<a href="mailto:mississaugachessclub@gmail.com">mississaugachessclub@gmail.com</a>
+<a href="https://www.instagram.com/mississaugachessclub/">Instagram</a>
+<a href="https://www.facebook.com/groups/375896684513470">Facebook group</a></div>
+</div>
+<p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
+</div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

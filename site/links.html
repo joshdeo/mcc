@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Links | Mississauga Chess Club</title>
+<meta name="description" content="Useful chess links from the Mississauga Chess Club.">
+<meta name="theme-color" content="#FFB627">
+<link rel="icon" href="assets/logo_mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.className+=' js'</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Mississauga Chess Club home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo_modern_dark.svg"><img src="assets/logo_modern.svg" width="182" height="43" alt="Mississauga Chess Club"></picture></a>
+<button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="membership.html">Membership</a>
+<div class="dd"><button aria-expanded="false">Play</button><div class="panel"><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a></div></div>
+<div class="dd cur"><button aria-expanded="false">About</button><div class="panel"><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html" aria-current="page">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div></div>
+<a class="btn small" href="waitlist.html">Join the waitlist</a>
+</nav></div></header>
+<main id="main">
+<div class="wrap pagehead"><div class="crumb"><a href="index.html">Home</a> / About / Links</div><h1>Useful links</h1><p>Free ways to play and learn chess, and other clubs nearby.</p></div>
+<div class="wrap"><section style="padding-top:10px">
+<div class="field"><label for="q">Filter links</label><input id="q" type="search" placeholder="Try kids, rating or forum"></div>
+<div id="box"></div></section></div>
+<script>
+(function(){
+var L={"Nearby chess clubs":[["Greater Toronto Chess League","https://harthousechess.com/2024/11/20/2024-greater-toronto-chess-league-cup-at-annex-chess-club/","League cup news, hosted by Hart House Chess Club. The league’s old website is offline."],["Burlington Chess Club (Ontario)","https://www.burlingtonchessclub.com/",""],["Hamilton City Chess Club (Ontario)","https://hamiltonchessclub.blogspot.com/","The club’s current website"]],"Other helpful links":[["Chess Federation of Canada","https://www.chess.ca/","Check your ratings and nationwide tournaments"],["FIDE","https://www.fide.com/","International Chess Federation"],["Chess’n Math Association","https://chess-math.org/","Organization for children from K to G12"],["ChessTalk","http://www.chesstalk.com/","Canada’s chess forum"],["ChessKid.com","https://www.chesskid.com/","For under 13s, one of the best"],["Chess.com","https://www.chess.com/","For over 13s, hugely popular"],["ChessBase","https://en.chessbase.com/","Chess news, software and a huge database"],["strategygames.ca","https://strategygames.ca/","Chess accessories and other board games"]],"Ever tried correspondence chess?":[["Chess.com Daily","https://www.chess.com/daily","A modern option"],["Lichess","https://lichess.org/","Popular chess website"],["ICCF","https://www.iccf.com/","International Correspondence Chess Federation"]]};
+var q=document.getElementById('q'),box=document.getElementById('box');
+function draw(){
+ var s=q.value.trim().toLowerCase(),h='';
+ Object.keys(L).forEach(function(g){
+  var items=L[g].filter(function(x){return !s||(x[0]+' '+x[2]+' '+g).toLowerCase().indexOf(s)>-1;});
+  if(!items.length)return;
+  h+='<h2 style="margin-top:22px">'+g+'</h2><div class="grid">'+items.map(function(x){return '<a class="card link" href="'+x[1]+'" rel="noopener"><h3>'+x[0]+'</h3><p class="muted" style="margin:0">'+(x[2]||'Visit site')+'</p></a>';}).join('')+'</div>';
+ });
+ box.innerHTML=h||'<p class="muted">No links match that search.</p>';
+}
+q.addEventListener('input',draw);draw();
+})();
+</script>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flogo"><img src="assets/logo_modern_dark.svg" width="194" height="46" alt="Mississauga Chess Club" loading="lazy"></div>
+<div class="fcols">
+<div><h4>Play</h4><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a><a href="membership.html">Membership</a><a href="waitlist.html">Waitlist</a></div>
+<div><h4>About</h4><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div>
+<div><h4>Find us</h4>
+<a href="https://maps.google.com/?q=1444+Dundas+Crescent+Mississauga+ON">Erindale United Church<br>1444 Dundas Crescent</a>
+<a href="https://maps.google.com/?q=1576+Dundas+Street+West+Mississauga+ON">The Erindale Academy<br>1576 Dundas Street West</a>
+<a href="mailto:mississaugachessclub@gmail.com">mississaugachessclub@gmail.com</a>
+<a href="https://www.instagram.com/mississaugachessclub/">Instagram</a>
+<a href="https://www.facebook.com/groups/375896684513470">Facebook group</a></div>
+</div>
+<p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
+</div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

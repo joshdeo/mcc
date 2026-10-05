@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tournaments and events | Mississauga Chess Club</title>
+<meta name="description" content="Current and past Mississauga Chess Club tournaments and events.">
+<meta name="theme-color" content="#FFB627">
+<link rel="icon" href="assets/logo_mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.className+=' js'</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Mississauga Chess Club home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo_modern_dark.svg"><img src="assets/logo_modern.svg" width="182" height="43" alt="Mississauga Chess Club"></picture></a>
+<button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="membership.html">Membership</a>
+<div class="dd cur"><button aria-expanded="false">Play</button><div class="panel"><a href="schedule.html">Club schedule</a><a href="events.html" aria-current="page">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a></div></div>
+<div class="dd"><button aria-expanded="false">About</button><div class="panel"><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div></div>
+<a class="btn small" href="waitlist.html">Join the waitlist</a>
+</nav></div></header>
+<main id="main">
+<div class="wrap pagehead"><div class="crumb"><a href="index.html">Home</a> / Play / Tournaments and events</div><h1>Tournaments and events</h1><p>What is on now, what is next, and where to find past results.</p></div>
+<div class="wrap"><div class="banner"><picture><source type="image/webp" srcset="assets/warm_800.webp 800w, assets/warm_1600.webp 1600w" sizes="(max-width:860px) 92vw, 520px"><img src="assets/warm_800.jpg" srcset="assets/warm_800.jpg 800w, assets/warm_1600.jpg 1600w" sizes="(max-width:860px) 92vw, 520px" width="800" height="600" alt="Tables set with chess boards and clocks, ready for a club night" loading="lazy" decoding="async"></picture></div></div>
+<div class="wrap"><section style="padding-top:10px">
+<div class="chips" id="chips"><button data-f="all" aria-pressed="true">All</button><button data-f="now" aria-pressed="false">On now</button><button data-f="past" aria-pressed="false">Finished</button><button data-f="junior" aria-pressed="false">Junior</button><button data-f="adult" aria-pressed="false">Adult</button></div>
+<div class="card"><ul class="clean" id="list"></ul></div>
+<p class="muted small" style="margin-top:14px">Results, pairings and standings for each event live on the current club site, which keeps an archive from 2022 to 2026. <a href="https://www.mississaugachessclub.ca/events/">Open the full archive</a>.</p>
+</section>
+<section><h2>Event types</h2><div class="grid">
+<div class="card"><h3>Junior championships</h3><p class="muted" style="margin:0">Friday and Monday divisions, run each autumn.</p></div>
+<div class="card"><h3>Active and classic series</h3><p class="muted" style="margin:0">Seasonal Wednesday events like Spring Glory and Merry May.</p></div>
+<div class="card"><h3>Blitz tournaments</h3><p class="muted" style="margin:0">Fast events, such as July Blitz and November Blitz.</p></div>
+<div class="card"><h3>Themed events</h3><p class="muted" style="margin:0">Including the Viktar Chuprys Memorial.</p></div>
+</div></section></div>
+<script>
+(function(){
+var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmt(s){var p=s.split('-');return months[+p[1]-1]+' '+(+p[2]);}
+var ev=[
+{t:'2026 Friday Junior Championship',s:'2026-09-11',e:'2026-10-23',u:'https://www.mississaugachessclub.ca/events/2026/2026-Friday-Junior-Championship/',c:'junior'},
+{t:'2026 Monday Junior Championship',s:'2026-09-14',e:'2026-10-26',u:'https://www.mississaugachessclub.ca/events/2026/2026-Monday-Junior-Championship/',c:'junior'},
+{t:'2026 Mississauga Chess Club Championship',s:'2026-09-16',e:'2026-10-28',u:'https://www.mississaugachessclub.ca/events/2026/2026-Mississauga-Chess-Club-Championship/',c:'adult'},
+{t:'2026 Tropical Summer',s:'2026-07-29',e:'2026-09-09',u:'https://www.mississaugachessclub.ca/events/',c:'adult'}
+];
+var d=new Date(),iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+var f='all';
+function status(e){return e.e<iso?'past':(e.s<=iso?'now':'soon');}
+function draw(){
+ var h='';
+ ev.slice().sort(function(a,b){return a.s<b.s?1:-1;}).forEach(function(e){
+  var st=status(e);
+  if(f==='now'&&st==='past')return;
+  if(f==='past'&&st!=='past')return;
+  if((f==='junior'||f==='adult')&&e.c!==f)return;
+  var tag=st==='past'?'<span class="tag soft">Finished</span>':(st==='now'?'<span class="tag">On now</span>':'<span class="tag gold">Coming up</span>');
+  h+='<li><span><a href="'+e.u+'">'+e.t+'</a><br><span class="pill">'+fmt(e.s)+' to '+fmt(e.e)+'</span></span>'+tag+'</li>';
+ });
+ document.getElementById('list').innerHTML=h||'<li>Nothing matches that filter.</li>';
+}
+[].slice.call(document.querySelectorAll('#chips button')).forEach(function(b){
+ b.addEventListener('click',function(){
+  f=b.getAttribute('data-f');
+  [].slice.call(document.querySelectorAll('#chips button')).forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+  draw();
+ });
+});
+draw();
+})();
+</script>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flogo"><img src="assets/logo_modern_dark.svg" width="194" height="46" alt="Mississauga Chess Club" loading="lazy"></div>
+<div class="fcols">
+<div><h4>Play</h4><a href="schedule.html">Club schedule</a><a href="events.html">Tournaments and events</a><a href="lessons.html">Lessons</a><a href="chessforkids.html">Chess for kids</a><a href="champions.html">Champions</a><a href="membership.html">Membership</a><a href="waitlist.html">Waitlist</a></div>
+<div><h4>About</h4><a href="rules.html">Rules</a><a href="sponsors.html">Sponsors</a><a href="links.html">Links</a><a href="volunteer.html">Volunteer</a><a href="contact.html">Contact us</a><a href="committee.html">Committee</a><a href="memberstories.html">Member stories</a><a href="news.html">News</a></div>
+<div><h4>Find us</h4>
+<a href="https://maps.google.com/?q=1444+Dundas+Crescent+Mississauga+ON">Erindale United Church<br>1444 Dundas Crescent</a>
+<a href="https://maps.google.com/?q=1576+Dundas+Street+West+Mississauga+ON">The Erindale Academy<br>1576 Dundas Street West</a>
+<a href="mailto:mississaugachessclub@gmail.com">mississaugachessclub@gmail.com</a>
+<a href="https://www.instagram.com/mississaugachessclub/">Instagram</a>
+<a href="https://www.facebook.com/groups/375896684513470">Facebook group</a></div>
+</div>
+<p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
+</div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

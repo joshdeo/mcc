@@ -1,0 +1,16 @@
+{
+  "name": "mcc_form_server",
+  "version": "1.0.0",
+  "description": "Serves the Mississauga Chess Club site and emails form submissions to the club.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  }
+}
