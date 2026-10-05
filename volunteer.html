@@ -32,14 +32,13 @@
 <div class="card" style="margin-top:16px"><h3>Getting started</h3><p class="muted" style="margin:0">High school students can earn hours toward the 40 hour requirement. New to chess? We can teach you. All volunteers are welcome, new volunteers and students included.</p></div>
 <div class="card" style="margin-top:16px"><h3>Openings</h3><div class="chips" style="margin:10px 0 0"><span class="tag">Monday nights</span><span class="tag">Wednesday nights</span><span class="tag">Friday nights</span></div><p class="muted small" style="margin-top:12px">Club address: 1444 Dundas Crescent, Mississauga.</p></div>
 </div>
-<div class="card"><h3>Tell us you are interested</h3><form data-endpoint="/api/submit" data-form="volunteer" data-mailto="joshua.deosaran@gmail.com" data-subject="Volunteer inquiry"><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-<div class="field"><label for="n">Name</label><input id="n" name="name" data-label="Name" required></div>
-<div class="field"><label for="e">Your email</label><input id="e" type="email" name="email" data-label="Reply email" required></div>
-<div class="field"><label>Nights you can help</label><div class="checks"><label><input type="checkbox" name="nights" value="Monday" data-label="Nights"> Monday</label><label><input type="checkbox" name="nights" value="Wednesday"> Wednesday</label><label><input type="checkbox" name="nights" value="Friday"> Friday</label></div></div>
-<div class="field"><label><input type="checkbox" name="hs" value="Yes" data-label="Need high school volunteer hours" style="width:auto;margin-right:8px">I am a high school student who needs volunteer hours</label></div>
-<div class="field"><label for="m">Message</label><textarea id="m" name="msg" data-label="Message"></textarea></div>
-<button class="btn" type="submit">Open my email</button>
-<div class="out"><p class="muted small">Your email app should open with this message ready. If not, copy it and send it to joshua.deosaran@gmail.com.</p><textarea readonly></textarea><p><button type="button" class="btn ghost small" data-copy style="color:var(--ink)!important">Copy message</button></p></div>
+<div class="card"><h3>Tell us you are interested</h3><form data-endpoint="/api/submit" data-form="volunteer" novalidate><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<div class="field"><label for="n">Name</label><input id="n" type="text" name="name" required maxlength="100"></div>
+<div class="field"><label for="e">Your email</label><input id="e" type="email" name="email" required></div>
+<div class="field"><label>Nights you can help</label><div class="checks"><label><input type="checkbox" name="nights" value="Monday"> Monday</label><label><input type="checkbox" name="nights" value="Wednesday"> Wednesday</label><label><input type="checkbox" name="nights" value="Friday"> Friday</label></div></div>
+<div class="field"><label><input type="checkbox" name="hs" value="Yes" style="width:auto;margin-right:8px">I am a high school student who needs volunteer hours</label></div>
+<div class="field"><label for="m">Message</label><textarea id="m" name="msg"></textarea></div>
+<button class="btn" type="submit">Send message</button>
 </form></div>
 </div></section></div>
 </main>
@@ -57,6 +56,7 @@
 </div>
 <p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
 </div></footer>
+<script src="assets/config.js"></script>
 <script src="assets/site.js" defer></script>
 </body>
 </html>

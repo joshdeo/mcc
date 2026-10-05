@@ -40,13 +40,12 @@
 <div class="row"><span>Facebook</span><a href="https://www.facebook.com/groups/375896684513470">Club group</a></div>
 <div class="row"><span>Location</span><a href="https://maps.google.com/?q=1444+Dundas+Crescent+Mississauga+ON">Erindale United Church</a></div>
 <p class="muted small">We meet Monday, Wednesday or Friday nights, with Tuesday and Thursday youth sessions at The Erindale Academy. The club poster was designed by Faustine Liu.</p></div>
-<div class="card"><h3>Send a message</h3><form data-endpoint="/api/submit" data-form="contact" data-mailto="joshua.deosaran@gmail.com" data-subject="Question for the club"><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-<div class="field"><label for="n">Name</label><input id="n" name="name" data-label="Name" required></div>
-<div class="field"><label for="e">Your email</label><input id="e" type="email" name="email" data-label="Reply email" required></div>
-<div class="field"><label for="t">Topic</label><select id="t" name="topic" data-label="Topic"><option>Joining or the waitlist</option><option>Membership</option><option>Tournaments</option><option>Kids and youth</option><option>Sponsorship</option><option>Something else</option></select></div>
-<div class="field"><label for="m">Message</label><textarea id="m" name="msg" data-label="Message" required></textarea></div>
-<button class="btn" type="submit">Open my email</button>
-<div class="out"><p class="muted small">Your email app should open with this message ready. If not, copy it and send it to joshua.deosaran@gmail.com.</p><textarea readonly></textarea><p><button type="button" class="btn ghost small" data-copy style="color:var(--ink)!important">Copy message</button></p></div>
+<div class="card"><h3>Send a message</h3><form data-endpoint="/api/submit" data-form="contact" novalidate><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<div class="field"><label for="n">Name</label><input id="n" type="text" name="name" required maxlength="100"></div>
+<div class="field"><label for="e">Your email</label><input id="e" type="email" name="email" required></div>
+<div class="field"><label for="t">Topic</label><select id="t" name="topic"><option>Joining or the waitlist</option><option>Membership</option><option>Tournaments</option><option>Kids and youth</option><option>Sponsorship</option><option>Something else</option></select></div>
+<div class="field"><label for="m">Message</label><textarea id="m" name="msg" required></textarea></div>
+<button class="btn" type="submit">Send message</button>
 </form></div></div></section></div>
 </main>
 <footer class="site"><div class="wrap">
@@ -63,6 +62,7 @@
 </div>
 <p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
 </div></footer>
+<script src="assets/config.js"></script>
 <script src="assets/site.js" defer></script>
 </body>
 </html>

@@ -1,37 +1,19 @@
-# Club form server
+# Mississauga Chess Club website redesign
 
-This small server does two jobs. It serves the club website, and it receives the waitlist, volunteer and contact forms and emails each one to the address set in MAIL_TO, which is currently joshua.deosaran@gmail.com.
+A faster, responsive redesign concept of the Mississauga Chess Club site. It is not the official club site. The home page is `index.html` at the top of this folder, so it works on GitHub Pages as is.
 
-## What you need
+## Put it on GitHub Pages
 
-Node.js version 18 or newer, and an email account that can send through SMTP. For a Gmail address, turn on two step verification and create an app password. Use that app password below, never the normal account password.
+1. Create a GitHub repository and upload everything in this folder, keeping the structure. Do not upload a `.env` file.
+2. In the repository, open Settings, then Pages, choose the main branch and the root folder, and save.
+3. Your site appears at https://yourname.github.io/reponame/.
 
-## Setup
+## Make the forms send email
 
-1. Put the `site` folder and this `server` folder side by side, exactly as they came.
-2. Open a terminal in the `server` folder and run `npm install`.
-3. Copy `.env.example` to a new file named `.env` and fill in the SMTP details.
-4. Run `npm start`.
-5. Open http://localhost:3000 and submit a form. The email arrives at the address in MAIL_TO. To send forms somewhere else, change MAIL_TO in `.env`. The email app backup on the site pages uses a fixed address, set once when the site is built.
+GitHub Pages only hosts static files, so the forms need the small server in the `server` folder running somewhere else. The steps are in `server/README.md`. In short: host it, then put its https address in `assets/config.js`, and put your GitHub Pages address in the server's ALLOWED_ORIGINS. Until that is done, the forms show an error and send nothing.
 
-Until SMTP_HOST is filled in, the server runs in test mode. It prints each submission in the terminal instead of sending it, which is a safe way to try everything first.
+## Folder map
 
-## What it protects against
-
-- Each person can send 5 messages per 10 minutes, and the whole site is capped at 120 per hour.
-- Only the known forms and fields are accepted, with length limits and a check that the email address is shaped correctly.
-- A hidden trap field catches simple spam bots. They get a fake success and nothing is sent.
-- Everything is escaped in the email, so nobody can inject markup or extra email headers.
-- Messages arrive with Reply To set to the sender, so the club can answer by pressing reply.
-
-## If the server is down
-
-The website forms fall back automatically. If the server cannot be reached, the form opens the visitor's email app with the message ready to send, and shows a copy box as a last resort. Nobody loses their message.
-
-## Settings reference
-
-All settings are in `.env`. MAIL_TO is where messages go. ALLOWED_ORIGIN restricts which site may post to the server. TRUST_PROXY should be 1 only when the server runs behind a proxy. PORT changes the port.
-
-## Good to know
-
-This server is what makes the forms send directly. It has to run somewhere that stays on, and whoever runs it owns the SMTP login and should keep the `.env` file private. Submissions are emailed and not stored anywhere else.
+- `index.html` and the other `.html` files are the pages.
+- `assets/` holds the styles, scripts, images and `config.js`.
+- `server/` is the form server. It is not part of the public site.

@@ -26,28 +26,34 @@
 <main id="main">
 <div class="wrap pagehead"><div class="crumb"><a href="index.html">Home</a> / Waitlist</div><h1>Join the waitlist</h1><p>The club is at capacity, so new players are added to a waitlist and contacted when space opens.</p></div>
 <div class="wrap"><section style="padding-top:10px"><div class="grid two">
-<div class="card"><form data-endpoint="/api/submit" data-form="waitlist" data-mailto="joshua.deosaran@gmail.com" data-subject="Waitlist request"><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-<div class="formgrid">
-<div class="field"><label for="name">Player name</label><input id="name" name="name" data-label="Player name" required autocomplete="name"></div>
-<div class="field"><label for="email">Your email</label><input id="email" type="email" name="email" data-label="Reply email" required autocomplete="email"></div>
-</div>
+<div class="card"><form data-endpoint="/api/submit" data-form="waitlist" novalidate><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<h3 style="margin-top:0">Player</h3>
+<div class="field"><label for="name">Player name</label><input id="name" type="text" name="name" required autocomplete="off" maxlength="100"></div>
 <div class="field"><label>Who is playing?</label><div class="checks">
-<label><input type="radio" name="group" value="Youth" data-label="Group" required> Youth</label>
-<label><input type="radio" name="group" value="Adult" data-label="Group"> Adult</label></div></div>
+<label><input type="radio" name="group" value="Youth" required> Youth (under 19)</label>
+<label><input type="radio" name="group" value="Adult"> Adult</label></div></div>
+<div class="youth" hidden>
 <div class="formgrid">
-<div class="field"><label for="age">Age (youth only)</label><input id="age" type="number" min="4" max="19" name="age" data-label="Age"></div>
-<div class="field"><label for="level">Playing level</label><select id="level" name="level" data-label="Level"><option>Beginner</option><option>Knows the rules</option><option>Plays casually online</option><option>Rated player</option></select></div>
+<div class="field"><label for="age">Player age</label><input id="age" type="number" inputmode="numeric" min="4" max="19" name="age"></div>
+<div class="field"><label for="guardian">Parent or guardian name</label><input id="guardian" type="text" name="guardian" autocomplete="name" maxlength="100"></div>
+</div></div>
+<div class="formgrid">
+<div class="field"><label for="level">Playing level</label><select id="level" name="level"><option>Beginner</option><option>Knows the rules</option><option>Plays casually online</option><option>Rated player</option></select></div>
+<div class="field"><label for="cfc">CFC ID (if you have one)</label><input id="cfc" type="text" name="cfc" maxlength="20"></div>
 </div>
-<div class="field"><label for="cfc">CFC ID (if you have one)</label><input id="cfc" name="cfc" data-label="CFC ID"></div>
+<h3>Contact</h3>
+<div class="formgrid">
+<div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+<div class="field"><label for="phone">Phone (optional)</label><input id="phone" type="tel" name="phone" autocomplete="tel" maxlength="30"></div>
+</div>
 <div class="field"><label>Preferred nights</label><div class="checks">
 <label><input type="checkbox" name="nights" value="Monday"> Monday</label>
 <label><input type="checkbox" name="nights" value="Tuesday"> Tuesday</label>
 <label><input type="checkbox" name="nights" value="Wednesday"> Wednesday</label>
 <label><input type="checkbox" name="nights" value="Thursday"> Thursday</label>
 <label><input type="checkbox" name="nights" value="Friday"> Friday</label></div></div>
-<div class="field"><label for="notes">Anything else</label><textarea id="notes" name="notes" data-label="Notes"></textarea></div>
-<button class="btn" type="submit">Open my email</button>
-<div class="out"><p class="muted small">Your email app should open with this message ready to send. If it did not, copy the text and send it to joshua.deosaran@gmail.com.</p><textarea readonly></textarea><p><button type="button" class="btn ghost small" data-copy style="color:var(--ink)!important">Copy message</button></p></div>
+<div class="field"><label for="notes">Anything else we should know</label><textarea id="notes" name="notes"></textarea></div>
+<button class="btn" type="submit">Join the waitlist</button>
 </form></div>
 <div><div class="card"><h3>What happens next</h3><p class="muted" style="margin:0">The club adds you to the waitlist and emails you when a spot opens. Tuesday and Thursday sessions at The Erindale Academy were added to bring more players in.</p></div>
 <div class="card" style="margin-top:16px"><h3>Good to know</h3><p class="muted" style="margin:0">Your first visit is free. Membership is paid annually from the week you join. See <a href="membership.html">membership</a> for rates.</p></div></div>
@@ -67,6 +73,7 @@
 </div>
 <p class="small">Redesign concept built from the public information on the current club site. Not the official site. <a href="https://www.mississaugachessclub.ca">Visit the current site</a> &nbsp;|&nbsp; <a href="brand.html">Logo and brand</a></p>
 </div></footer>
+<script src="assets/config.js"></script>
 <script src="assets/site.js" defer></script>
 </body>
 </html>
